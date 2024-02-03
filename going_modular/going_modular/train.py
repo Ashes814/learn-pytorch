@@ -1,3 +1,7 @@
+"""
+Trains a PyTorch image classification model using device-agnostic code.
+"""
+
 import os
 import torch
 import data_setup, engine, model_builder, utils
@@ -15,7 +19,7 @@ train_dir = "data/pizza_steak_sushi/train"
 test_dir = "data/pizza_steak_sushi/test"
 
 # Setup target device
-device = "cuda" if torch.cuda.is_available() else "mps"
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Create transforms
 data_transform = transforms.Compose([
